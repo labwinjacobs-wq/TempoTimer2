@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Account – Tempo</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html">Tempo<em>.</em></a>
+    <a class="header-link" href="index.html">Back to planner</a>
+  </header>
+
+  <main class="auth-wrap">
+    <section class="auth-card" id="authView">
+      <h1>Make an account</h1>
+      <p id="authIntro">Your tasks and timer history will be saved and available on any device you sign in on.</p>
+
+      <button id="googleButton" class="oauth-button" type="button"><span class="google-g">G</span> Continue with Google</button>
+      <div class="auth-divider">or use email</div>
+
+      <form id="emailForm">
+        <label for="email">Email</label>
+        <input id="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+        <label for="password">Password</label>
+        <input id="password" type="password" autocomplete="new-password" minlength="8" placeholder="8 characters or more" required>
+        <button class="button" type="submit">Create account</button>
+      </form>
+
+      <button id="switchMode" class="plain-button auth-switch" type="button">Already have an account? Sign in</button>
+      <p id="authMessage" class="auth-message" aria-live="polite"></p>
+      <p class="auth-footnote">By continuing you agree to the <a href="terms.html">Terms</a> and have read the <a href="privacy.html">Privacy page</a>.</p>
+    </section>
+
+    <section class="auth-card hidden" id="accountView">
+      <h1 id="welcomeName">Welcome.</h1>
+      <p id="accountEmail"></p>
+
+      <div class="account-summary">
+        <div><span id="openTaskCount">0</span><small>open tasks</small></div>
+        <div><span id="focusMinutes">0</span><small>focus minutes</small></div>
+      </div>
+
+      <h2>Google Calendar</h2>
+      <div class="integration-row">
+        <div>
+          <strong>Time blocks</strong>
+          <p>Not available yet. It will only connect if you choose to.</p>
+        </div>
+        <button id="calendarButton" class="button secondary" type="button">Connect</button>
+      </div>
+
+      <button id="signOutButton" class="plain-button danger-button" type="button">Sign out</button>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div><a class="brand" href="index.html">Tempo<em>.</em></a></div>
+    <div class="footer-links">
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="mailto:ferdinamaeybinu@gmail.com">Contact</a>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
+  <script src="account.js"></script>
+</body>
+</html>
